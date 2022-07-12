@@ -1,5 +1,5 @@
 <template>
-  <IndexTemplate />
+  <BudgetsIndexTemplate />
 </template>
 
 <script>

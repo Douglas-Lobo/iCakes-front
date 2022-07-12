@@ -16,7 +16,7 @@ export default {
 
   async getUser({ commit }, payload) {
     await this.$axios
-      .$get('/auth/user')
+      .$get('/auth')
       .then((res) => {
         commit('SET_USER', res)
         commit('SET_TOKEN', payload)

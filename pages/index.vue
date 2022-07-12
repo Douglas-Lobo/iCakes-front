@@ -1,18 +1,18 @@
 <template>
-  <div>{{ user }}</div>
+  <IndexTemplate />
 </template>
 
 <script>
 export default {
   layout: 'site',
-  async asyncData({ store }) {
-    await store.dispatch('users/getUser')
-  },
-  computed: {
-    user() {
-      return this.$store.state.users.user
-    },
-  },
+  // async asyncData({ store }) {
+  //   await store.dispatch('users/getUser')
+  // },
+  // computed: {
+  //   user() {
+  //     return this.$store.state.users.user
+  //   },
+  // },
 }
 </script>
 
