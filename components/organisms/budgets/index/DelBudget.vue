@@ -1,11 +1,7 @@
 <template>
-  <b-button
-    :class="dinClass"
-    class="has-text-danger"
-    type="is-ghost"
-    icon-right="delete"
-    @click="delBudget()"
-  />
+  <button :class="dinClass" @click="delBudget()">
+    <b-icon :icon="icon" />
+  </button>
 </template>
 
 <script>
@@ -16,6 +12,10 @@ export default {
       required: true,
     },
     dinClass: {
+      type: String,
+      required: true,
+    },
+    icon: {
       type: String,
       required: true,
     },

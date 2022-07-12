@@ -15,7 +15,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/assets/scss/main.scss'],
+  css: ['@/assets/scss/main.scss', '@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ['~/plugins/axios'],
@@ -24,7 +24,11 @@ export default {
   components: [{ path: '@/components/', pathPrefix: false }],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['@nuxtjs/eslint-module'],
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/google-fonts',
+    '@nuxt/postcss8',
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -45,12 +49,27 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
+  },
 
   env: {
     baseUrl:
       process.env.NODE_ENV === 'development'
         ? 'http://localhost:3000'
         : 'http://localhost:3000',
+  },
+
+  googleFonts: {
+    families: {
+      Montserrat: {
+        wght: [300, 400, 500, 600],
+      },
+    },
   },
 }

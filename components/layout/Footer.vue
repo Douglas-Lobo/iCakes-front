@@ -1,22 +1,18 @@
 <template>
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>Bulma</strong> by
-        <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
-        licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
-        website content is licensed
-        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-          >CC BY NC SA 4.0</a
-        >.
-      </p>
-    </div>
+  <footer
+    class="flex justify-center items-center bg-slate-900 h-8 absolute bottom-0 w-full"
+  >
+    <p class="text-white text-sm">iCakes - {{ getCurrentYear }}</p>
   </footer>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Footer',
+  computed: {
+    getCurrentYear() {
+      return new Date().getFullYear()
+    },
+  },
+}
 </script>
-
-<style></style>
